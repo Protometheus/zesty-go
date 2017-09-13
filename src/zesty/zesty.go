@@ -18,6 +18,8 @@ func main() {
 		port = "5000"
 	}
 	
+	port = ":" + port
+	
 	fmt.Println(port)
 
     http.HandleFunc("/", handler)
