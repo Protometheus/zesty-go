@@ -26,7 +26,7 @@ func base_handler(w http.ResponseWriter, r *http.Request) {
 func endpoint_handler(w http.ResponseWriter, r *http.Request) {
 	personal_info := PersonalInfo{Name{"Mohammad", "Oweis"}, "https://github.com/Protometheus/zesty-go",  "https://github.com/Protometheus/zesty-go", "oweismo.applicant@gmail.com"}
 	
-	js, err := json.Marshal(personal_info)
+	js, _ := json.Marshal(personal_info)
 	
 	w.WriteHeader(201)
 	w.Header().Set("Access-Control-Allow-Origin", "*")
