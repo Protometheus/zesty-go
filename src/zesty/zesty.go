@@ -43,9 +43,7 @@ func main() {
 	
 	port = ":" + port
 	
-	fmt.Println(port)
-
-    http.HandleFunc("/", base_handler)
+	http.HandleFunc("/", base_handler)
 	http.HandleFunc("/code/challenge", endpoint_handler)
 	
     http.ListenAndServe(port, nil)
