@@ -5,7 +5,6 @@ import (
     "fmt"
     "net/http"
 	"encoding/json"
-	"github.com/rs/cors"
 )
 
 type Name struct {
@@ -36,8 +35,6 @@ func endpoint_handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	mux := http.NewServeMux()
-	
 	port := os.Getenv("PORT")
 
 	if port == "" {
@@ -48,10 +45,8 @@ func main() {
 	
 	fmt.Println(port)
 
-    mux.HandleFunc("/", base_handler)
-	mux.HandleFunc("/code/challenge", endpoint_handler)
+    http.HandleFunc("/", base_handler)
+	http.HandleFunc("/code/challenge", endpoint_handler)
 	
-	handler := cors.Default().Handler(mux)
-	
-    http.ListenAndServe(port, handler)
+    http.ListenAndServe(port, nil)
 }
