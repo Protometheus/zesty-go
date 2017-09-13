@@ -9,8 +9,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hi there, I love %s!", r.URL.Path[1:])
+func base_handler(w http.ResponseWriter, r *http.Request) {
+    http.Redirect(w, r, "/code/challenge", 201)
+}
+
+func endpoint_handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Hi there, I love %s!", r.URL.Path[1:])
 }
 
 func main() {
@@ -26,6 +30,7 @@ func main() {
 	
 	fmt.Println(port)
 
-    http.HandleFunc("/", handler)
+    http.HandleFunc("/", base_handler)
+	http.HandleFunc("/code/challenge", endpoint_handler)
     http.ListenAndServe(port, nil)
 }
