@@ -33,7 +33,7 @@ func endpoint_handler(w http.ResponseWriter, r *http.Request) {
 	js, _ := json.Marshal(personal_info)
 	
     // this should be handled by framework
-	w.WriteHeader(201)
+	w.WriteHeader(http.StatusCreated)
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
 	w.Write(js)
