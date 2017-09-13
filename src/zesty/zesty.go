@@ -22,10 +22,11 @@ type PersonalInfo struct {
 }
 
 // Handle hits to '/'
+/*
 func base_handler(w http.ResponseWriter, r *http.Request) {
     http.Redirect(w, r, "/code/challenge", 301)
 }
-
+*/
 // Handle hits to '/code/challenge'
 func endpoint_handler(w http.ResponseWriter, r *http.Request) {
 	personal_info := PersonalInfo{Name{"Mohammad", "Oweis"}, "https://github.com/Protometheus/zesty-go",  "https://github.com/Protometheus/zesty-go", "oweismo.applicant@gmail.com"}
@@ -51,7 +52,7 @@ func main() {
 	port = ":" + port
 	
     // set routes
-	http.HandleFunc("/", base_handler)
+	/*http.HandleFunc("/", base_handler)*/
 	http.HandleFunc("/code/challenge", endpoint_handler)
 	
     // start server
