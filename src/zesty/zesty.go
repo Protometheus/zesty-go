@@ -4,7 +4,7 @@ import (
 	"os"
     "fmt"
     "net/http"
-	"json"
+	"encoding/json"
 )
 
 type Name struct {
