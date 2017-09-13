@@ -19,5 +19,5 @@ func main() {
 	}
 
     http.HandleFunc("/", handler)
-    http.ListenAndServe(port, nil)
+    http.ListenAndServe(port || "3000", nil)
 }
