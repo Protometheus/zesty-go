@@ -26,7 +26,7 @@ func main() {
 	
 	port = ":" + port
 	
-	gin.New()
+	// gin.New()
 	
 	fmt.Println(port)
 
