@@ -46,5 +46,6 @@ func main() {
 	http.HandleFunc("/", base_handler)
 	http.HandleFunc("/code/challenge", endpoint_handler)
 	
+	fmt.Println("Starting Server... on port: " + port)
     http.ListenAndServe(port, nil)
 }
