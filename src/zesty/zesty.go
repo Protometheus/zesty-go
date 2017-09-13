@@ -2,7 +2,7 @@ package main
 
 import (
 	"os"
-	"log"
+	// "log"
     "fmt"
     "net/http"
 )
@@ -15,9 +15,11 @@ func main() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		log.Fatal("$PORT must be set")
+		port = "5000"
 	}
+	
+	fmt.Println(port)
 
     http.HandleFunc("/", handler)
-    http.ListenAndServe(port || "3000", nil)
+    http.ListenAndServe(port, nil)
 }
