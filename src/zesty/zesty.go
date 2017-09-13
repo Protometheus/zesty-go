@@ -5,6 +5,8 @@ import (
 	// "log"
     "fmt"
     "net/http"
+	
+	"github.com/gin-gonic/gin"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -19,6 +21,8 @@ func main() {
 	}
 	
 	port = ":" + port
+	
+	gin.New()
 	
 	fmt.Println(port)
 
