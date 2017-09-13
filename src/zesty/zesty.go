@@ -10,7 +10,7 @@ import (
 )
 
 func base_handler(w http.ResponseWriter, r *http.Request) {
-    http.Redirect(w, r, "/code/challenge", 201)
+    http.Redirect(w, r, "/code/challenge", 301)
 }
 
 func endpoint_handler(w http.ResponseWriter, r *http.Request) {
